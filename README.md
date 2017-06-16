@@ -7,6 +7,9 @@ for a more secure AES encryption. (java implementation)
 * Using Timebase algorithm from https://github.com/j256/two-factor-auth 
 * Using java AES encryption
 
+A new AES key is generated every 30 seconds with the TOTP algorithm.
+The client needs the original AES key to decrypt the messages but the key-synchronization happens with the help of the TOTP.
+
 ### Usage
 
   ```
