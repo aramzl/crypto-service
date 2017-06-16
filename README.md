@@ -15,7 +15,7 @@ The client needs the original AES key to decrypt the messages but the key-synchr
   ```
  CryptoService cs = new CryptoService(secret.getBytes(), ivParam.getBytes(), ivParamTimeBased.getBytes());
  ByteBuffer buffer = ByteBuffer.wrap("foobar".getBytes());
- ByteBuffer encryptedBuffer = cs.encrypt(buffer);
- ByteBuffer decryptedBuffer = cs.decrypt(encryptedBuffer);
+ ByteBuffer encryptedBuffer = cs.encryptTimeBased(buffer);
+ ByteBuffer decryptedBuffer = cs.decryptTimeBased(encryptedBuffer);
  System.out.println(new String(decryptedBuffer.array())); 
  ```
